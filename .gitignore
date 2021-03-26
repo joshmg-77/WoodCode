@@ -8,6 +8,12 @@
 # testing
 /coverage
 
+#feature store context
+/context
+
+#eslintcache
+.eslintcache
+
 # production
 /build
 
