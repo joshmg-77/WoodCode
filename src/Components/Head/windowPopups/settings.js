@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import DivContent from "../../Shared/DivContent";
@@ -6,6 +5,7 @@ import SetBackground from "../../ComponentsSettingsEditor/Setbackground";
 import FrameOptionsBackground from "../../ComponentsSettingsEditor/FrameOptionsBackground";
 import useGenerateRandomHex from "../../../hooks/useGenerateRandomHex.js";
 import { useSessionState } from "@dannyman/use-store";
+
 const DivWrap = styled.div`
   width: 100%;
 `;
@@ -136,6 +136,17 @@ export default function Settings({ openItem, onBackInner }) {
     autoRefresh: true,
   });
 
+  const HandleChangeInputs = (event) => {
+    let value =
+      event.target.name === "line_numbers" ||
+      event.target.name === "box_shadow" || event.target.name === "box_shadowInset"
+        ? event.target.checked
+        : event.target.value;
+    setOptions({ ...options, [event.target.name]: value });
+  };
+
+
+
   useEffect(() => {
     /* with context we pass all data to the context and we're cosume in every*/
    setWaterMark({...WaterMark,Mark:options.watermark})
@@ -145,14 +156,6 @@ export default function Settings({ openItem, onBackInner }) {
     setOptions({ ...options, color: randoms });
   }, [randoms]);
 
-  const HandleChangeInputs = (event) => {
-    let value =
-      event.target.name === "line_numbers" ||
-      event.target.name === "box_shadow" || event.target.name === "box_shadowInset"
-        ? event.target.checked
-        : event.target.value;
-    setOptions({ ...options, [event.target.name]: value });
-  };
 
   return (
     <>
