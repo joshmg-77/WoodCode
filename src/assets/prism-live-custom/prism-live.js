@@ -1,3 +1,7 @@
+/* eslint-disable no-cond-assign */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 /**
 	Prism Live: Code editor based on Prism.js
 	Works best in Chrome. Currently only very basic support in other browsers (no snippets, no shortcuts)
@@ -5,17 +9,18 @@
 */
 (async function() {
 
-  // if (!window.Bliss) {
-  //     // Load Bliss if not loaded
-  //     console.log("Bliss not loaded. Loading remotely from blissfuljs.com");
+  if (!window.Bliss) {
+      // Load Bliss if not loaded
+      console.log("Bliss not loaded. Loading remotely from blissfuljs.com");
   
-  //     let bliss = document.createElement("script");
-  //     bliss.src = "https://blissfuljs.com/bliss.shy.min.js";
-  //     document.head.appendChild(bliss);
+      let bliss = document.createElement("script");
+      bliss.src = "https://blissfuljs.com/bliss.shy.min.js";
+      document.head.appendChild(bliss);
   
-  //     await new Promise(resolve => bliss.onload = resolve);
-  // }
+      await new Promise(resolve => bliss.onload = resolve);
+  }
   
+  // eslint-disable-next-line no-undef
   var $ = Bliss, $$ = Bliss.$;
   var ready = Promise.resolve();
   
@@ -37,6 +42,7 @@
   
   var superKey = navigator.platform.indexOf("Mac") === 0? "metaKey" : "ctrlKey";
   
+
   var _ = Prism.Live = class PrismLive {
       constructor(source) {
           this.source = source;
@@ -81,7 +87,7 @@
           this.textarea.classList.add("prism-live");
           this.source.classList.add("prism-live-source");
   
-          if (self.Incrementable) {
+          if (window.self.Incrementable) {
               // TODO data-* attribute for modifier
               // TODO load dynamically if not present
               new Incrementable(this.textarea);
@@ -91,7 +97,7 @@
               input: evt => this.update(),
   
               keyup: evt => {
-                  if (evt.key == "Enter") { // Enter
+                  if (evt.key === "Enter") { // Enter
                       // Maintain indent on line breaks
                       this.insert(this.currentIndent);
                       this.syncScroll();
@@ -196,6 +202,7 @@
           });
   
           this.update();
+          // eslint-disable-next-line no-sparse-arrays
           this.lang = (this.code.className.match(/lang(?:uage)?-(\w+)/i) || [,])[1];
   
           this.observer = new MutationObserver(r => {
@@ -781,6 +788,7 @@
       })(),
   
       regexp: (() => {
+          // eslint-disable-next-line no-useless-escape
           var escape = s => s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
           var _regexp = (flags, strings, ...values) => {
               var pattern = strings[0] + values.map((v, i) => escape(v) + strings[i+1]).join("");
