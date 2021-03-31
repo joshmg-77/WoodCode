@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import DivContent from "../../Shared/DivContent";
 import SetBackground from "../../ComponentsSettingsEditor/Setbackground";
@@ -158,7 +158,7 @@ export default function Settings({ openItem, onBackInner }) {
 
 
   return (
-    <>
+    <Fragment>
       <GlobalStyle
         backgroundColor={options.color}
         padding={`${options.padding}px`}
@@ -166,7 +166,7 @@ export default function Settings({ openItem, onBackInner }) {
         bottom={`${(parseInt(options.padding) + 5).toString()}px`}
         right={`${parseInt(options.padding) + 5}px`}
         left={`${options.padding}px`}
-        top={`${(options.padding).toString()}px`}
+        top={`${options.padding}px`}
         boxShadow={options.box_shadow}
         boxShadowInset={options.box_shadowInset}
         lineNumbers={options.line_numbers}
@@ -245,6 +245,6 @@ export default function Settings({ openItem, onBackInner }) {
           </FrameOptionsBackground>
         </DivWrap>
       </DivContent>
-    </>
+    </Fragment>
   );
 }
