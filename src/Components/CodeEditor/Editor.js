@@ -3,7 +3,7 @@ import Prism from "prismjs";
 import styled from "styled-components";
 import { useSessionState } from "@dannyman/use-store";
 
-import "prismjs/prism-live";
+import "prismjs/prism-live.js";
 import "prismjs/prism-live.css";
 import "prismjs/plugins/data-uri-highlight/prism-data-uri-highlight.js";
 import "prismjs/plugins/filter-highlight-all/prism-filter-highlight-all.js";
