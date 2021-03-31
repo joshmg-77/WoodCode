@@ -6,7 +6,6 @@ const Div = styled.div`
     left: 30px; 
     top: 30px; 
     z-index:1;
-    
     width: 30%;
     height: auto;
     display: flex;

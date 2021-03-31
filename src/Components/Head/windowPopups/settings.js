@@ -75,6 +75,7 @@ const Input = styled.input.attrs((props) => ({
     background: rgba(0, 0, 0, 0.3);
   }
 `;
+
 const GlobalStyle = createGlobalStyle`
   .primary-background{
     padding:${({ padding }) => padding};
@@ -86,8 +87,8 @@ const GlobalStyle = createGlobalStyle`
     right:${({ right }) => `${right} !important` };
   }
   .btns{
-    top:${({ top }) => top};
-    left:${({ left }) => left};
+    left:${({leftSpace}) => leftSpace};
+    top:${({ topSpace }) => topSpace};
   }
   pre[class*="language-"] {  /* override for line-number.css
        box-shadow:1px 1px 15px black;width:inherit;
@@ -165,8 +166,8 @@ export default function Settings({ openItem, onBackInner }) {
         WatermarkColor={options.color}
         bottom={`${(parseInt(options.padding) + 5).toString()}px`}
         right={`${parseInt(options.padding) + 5}px`}
-        left={`${options.padding}px`}
-        top={`${options.padding}px`}
+        leftSpace={`${options.padding}px`}
+        topSpace={`${options.padding}px`}
         boxShadow={options.box_shadow}
         boxShadowInset={options.box_shadowInset}
         lineNumbers={options.line_numbers}
