@@ -163,10 +163,10 @@ export default function Settings({ openItem, onBackInner }) {
         backgroundColor={options.color}
         padding={`${options.padding}px`}
         WatermarkColor={options.color}
-        bottom={`${parseInt(options.padding) + 5}px`}
+        bottom={`${(parseInt(options.padding) + 5).toString()}px`}
         right={`${parseInt(options.padding) + 5}px`}
         left={`${options.padding}px`}
-        top={`${options.padding}px`}
+        top={`${(options.padding).toString()}px`}
         boxShadow={options.box_shadow}
         boxShadowInset={options.box_shadowInset}
         lineNumbers={options.line_numbers}
