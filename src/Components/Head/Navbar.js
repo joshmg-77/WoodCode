@@ -49,6 +49,7 @@ const Navbar = () => {
   };
   const onBackInnerClosePopUp = () => {
     //it close popup
+    // eslint-disable-next-line no-unused-vars
     Object.keys(inter).forEach((r) => {
       setInter({ r: false });
     });

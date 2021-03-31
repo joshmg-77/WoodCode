@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { useSessionState } from "@dannyman/use-store";
 import Select, { components } from "react-select";
@@ -18,7 +19,7 @@ const SpanControl = styled.span`
   font-size: 25px;
   padding: 5px;
 `;
-const Control = ({ children, ...props }) => {
+const Control = ({children, ...props }) => {
   return (
     <components.Control {...props}>
       <SpanControl>

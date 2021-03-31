@@ -1,4 +1,5 @@
-import React,{ useState, useEffect } from "react";
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import DivContent from "../../Shared/DivContent";
 import SetBackground from "../../ComponentsSettingsEditor/Setbackground";

@@ -1,4 +1,3 @@
-import React from "react";
 import styled,{keyframes} from "styled-components";
 import Logo from "../../assets/161677264542504006.png";
 

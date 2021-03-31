@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Export } from "../../../utils/createImage.js";
@@ -94,7 +95,7 @@ const ExportSnippet = ({ openItem, onBackInner }) => {
             hoverColor="rgba(0,0,0,0.7)"
             width="100px"
             height="30px"
-            onClick={(r) => OpenNewTab()}
+            onClick={() => OpenNewTab()}
             rel="noopener noreferrer"
           >
             Preview

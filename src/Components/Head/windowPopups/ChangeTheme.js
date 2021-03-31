@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import DivContent from "../../Shared/DivContent";
@@ -31,7 +33,7 @@ const Control = ({ children, ...props }) => {
   return (
     <components.Control {...props}>
       <span style={style}>
-        <i class="fas fa-palette"></i>
+        <i className="fas fa-palette"></i>
       </span>
       {children}
     </components.Control>
@@ -130,7 +132,7 @@ function ChangeTheme({ openItem, onBackInner, className, props }) {
     >
       <h2>Change Theme</h2>
       <DivSection>
-        *** if your theme not exist dont worry we're working in a new
+        Important: if your theme not exist dont worry we're working in a new
         feature for improve a custom theme and if your theme is little
         bit generic then you should create a <Pill>pull request</Pill>{" "}
         at github for upload the custom theme
