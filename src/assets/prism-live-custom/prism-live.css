@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+
+body{
+    background: #06192E;   
+    background: linear-gradient( 
+        64deg
+         , rgba(13,27,98,1) 30%, rgba(249,36,255,1) 97%);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+/*Edit for me joshmg*/
+.primary-background{
+    width: 90%;
+    max-width:900px;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:center;
+    align-content: center;
+    position: relative;
+    margin:40px auto;
+    padding:30px;
+    background-color:#217CDE;
+  
+}
+[class*="language-"].line-numbers {
+	counter-reset: linenumber;
+    padding-bottom: 30px;    
+}
+ /* .btns{
+  position: absolute;
+
+
+  z-index: 400;
+  width:30%;
+  height:auto;
+  display:flex;
+  flex-flow:row wrap;}
+   margin-left:15%;  
+    border:2px solid red; 
+   padding:10px;
+}
+
+.btns span{
+  counter-reset: linenumber;  
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:flex-start;
+  width:15px;
+  height:15px;
+  border-radius:20px;
+  margin:3px;
+}
+.btns span:first-child{
+  background:red;
+}
+.btns span:nth-child(2){
+  background:orange;
+}
+.btns span:last-child{
+  background:yellowgreen;
+} */
+
+div.prism-live {
+    /*Se queda asi esta muy bien*/
+    position:relative;
+    width: 100%;
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    margin:0;
+
+}
+textarea.prism-live,
+pre.prism-live {
+    padding: .2rem .5rem ;
+    box-sizing: border-box;
+    margin:auto !important;  
+    min-height:40px;
+    overflow: hidden !important;
+}
+
+textarea.prism-live {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height:100%;
+    padding-top:40px;
+    padding-bottom: 30px; 
+    overflow:hidden !important; 
+
+    color: transparent;
+    cursor: text;
+    white-space:pre;
+    border: none;
+    outline: none;
+    background:transparent !important;
+
+   /*
+   for custom theme with img on background 
+   background:url("https://ticotimes.net/wp-content/uploads/2019/02/IMG_0192.jpeg");
+    background-size:cover;
+    background-position:top;
+    filter: brightness(45%) contrast(90%) hue-rotate(120deg);
+  */
+
+    resize: none;
+
+    /* --selection-color: hsla(0, 0%, 100%, .8);
+     */
+}
+
+/*text order*/
+@media screen and (max-width:640px){
+
+
+    code[class*="language-"],
+    pre[class*="language-"],textarea.prism-live {
+    white-space: pre;
+    margin:auto;
+    overflow-x: revert !important;
+    text-decoration:none;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+
+    }
+    code[class*="language-"]::-webkit-scrollbar,
+    pre[class*="language-"]::-webkit-scrollbar,textarea.prism-live::-webkit-scrollbar {
+         height: 3px;
+
+    }
+    code[class*="language-"]::-webkit-scrollbar-track,
+    pre[class*="language-"]::-webkit-scrollbar-track,textarea.prism-live::-webkit-scrollbar-track  {
+       background:rgb(255, 0, 102);
+       border-radius: 10px;
+    }
+    code[class*="language-"]::-webkit-scrollbar-thumb,
+    pre[class*="language-"]::-webkit-scrollbar-thumb,textarea.prism-live::-webkit-scrollbar-thumb  {
+               
+       background:rgba(0,0,0,0.6);
+       border-radius: 25px;
+    }
+
+    .primary-background{
+        width: 100%;
+    }
+
+    
+}  
+
+@supports (not (caret-color: white)) and (-webkit-text-fill-color: rgb(255, 255, 255)) {
+    textarea.prism-live {
+        color: inherit;
+        -webkit-text-fill-color: rebeccapurple;
+        caret-color:#040404 !important;
+    }
+}
+@supports (not (caret-color: black)) and (-webkit-text-fill-color: rgb(0, 0, 0)) {
+    textarea.prism-live {
+        color: inherit;
+        -webkit-text-fill-color: rebeccapurple;
+        caret-color:#ffffff !important;
+    }
+}
+    /* Setting specific colors is needed
+     * because otherwise Firefox shows blank text */
+    textarea.prism-live::-moz-selection {
+        background: yellow;
+        color:#000000;
+    }
+
+    textarea.prism-live::selection {
+        background: yellow;
+        color: #000000;
+    }
+    
+    pre.prism-live > code:empty::before {
+        content: " ";
+        position:absolute;
+        color:rgb(36, 39, 39);
+        overflow: none ;
+        border:none !important;
+    }
+    
+    span.line{
+        color:rgb(18, 22, 22);
+    }
+    :not(pre) > code[class*="language-"]{
+        border:none !important;
+    }
+
+    
+
+/*fixed and mod */
+code[class*="language-"],
+pre[class*="language-"],textarea.prism-live {
+    /*we Overrride tab-size for themes and plugins*/
+    white-space: pre;
+    margin:auto;
+    border:none !important;
+    -moz-tab-size: 2 !important;
+    -o-tab-size: 2 !important;
+    tab-size: 2 !important;
+    line-height: 1.5 ;
+    font-size: 1em !important;
+    white-space:pre-wrap;
+    word-break: break-word;
+}
+
+ pre[class*="language-"] {width:inherit !important;} 
+
