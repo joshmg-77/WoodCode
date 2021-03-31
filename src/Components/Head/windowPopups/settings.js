@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
     right:${({ right }) => `${right} !important` };
   }
   .btns{
-    left:${({leftSpace}) => leftSpace};
+    left:${({leftSpace}) => leftSpace+"px"};
     top:${({ topSpace }) => topSpace};
   }
   pre[class*="language-"] {  /* override for line-number.css
@@ -166,7 +166,7 @@ export default function Settings({ openItem, onBackInner }) {
         WatermarkColor={options.color}
         bottom={`${(parseInt(options.padding) + 5).toString()}px`}
         right={`${parseInt(options.padding) + 5}px`}
-        leftSpace={`${options.padding}px`}
+        leftSpace={options.padding}
         topSpace={`${options.padding}px`}
         boxShadow={options.box_shadow}
         boxShadowInset={options.box_shadowInset}
