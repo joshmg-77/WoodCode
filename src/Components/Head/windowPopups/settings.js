@@ -82,13 +82,13 @@ const GlobalStyle = createGlobalStyle`
     background:${({ backgroundColor }) => backgroundColor};
   }
   .watermark{
-    color:${({ WatermarkColor }) => WatermarkColor};
+    color:${({ WatermarkColor }) => `${WatermarkColor} !important`};
     bottom:${({ bottom }) => bottom};
-    right:${({ right }) => `${right} !important` };
+    right:${({ right }) => right};
   }
   .btns{
-    left:${({leftSpace}) => leftSpace+"px !important"};
-    top:${({ topSpace }) => topSpace};
+    left:${({leftSpace}) => `${leftSpace} !important`};
+    top:${({ topSpace }) => `${topSpace} !important`};
   }
   pre[class*="language-"] {  /* override for line-number.css
        box-shadow:1px 1px 15px black;width:inherit;
@@ -151,7 +151,7 @@ export default function Settings({ openItem, onBackInner }) {
   useEffect(() => {
     /* with context we pass all data to the context and we're cosume in every*/
    setWaterMark({...WaterMark,Mark:options.watermark})
-  }, [options.watermark,options.color,options.padding,options.box_shadowInset,options.line_numbers]);
+  }, [options]);
 
   useEffect(() => {
     setOptions({ ...options, color: randoms });
@@ -166,7 +166,7 @@ export default function Settings({ openItem, onBackInner }) {
         WatermarkColor={options.color}
         bottom={`${(parseInt(options.padding) + 5).toString()}px`}
         right={`${parseInt(options.padding) + 5}px`}
-        leftSpace={options.padding}
+        leftSpace={`${options.padding}px`}
         topSpace={`${options.padding}px`}
         boxShadow={options.box_shadow}
         boxShadowInset={options.box_shadowInset}
