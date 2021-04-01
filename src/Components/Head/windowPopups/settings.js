@@ -101,8 +101,8 @@ const GlobalStyle = createGlobalStyle`
         
   }
   ${({ lineNumbers }) =>!lineNumbers && `:not(pre) > code[class*="language-"], pre[class*="language-"] {
-    padding-top:40px;
-    padding-bottom: 30px ;
+    padding-top:40px !important;
+    padding-bottom: 30px !important ;
     padding-left: .5rem !important;
 
   }
