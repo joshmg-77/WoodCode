@@ -163,7 +163,7 @@ textarea.prism-live {
     textarea.prism-live {
         color: inherit;
         -webkit-text-fill-color: rebeccapurple;
-        caret-color:#040404 !important;
+        caret-color:#fffdfd !important;
     }
 }
 @supports (not (caret-color: black)) and (-webkit-text-fill-color: rgb(0, 0, 0)) {
