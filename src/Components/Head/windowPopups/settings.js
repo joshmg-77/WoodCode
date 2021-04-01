@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
     right:${({ right }) => `${right} !important` };
   }
   .btns{
-    left:${({leftSpace}) => leftSpace+"px"};
+    left:${({leftSpace}) => leftSpace+"px !important"};
     top:${({ topSpace }) => topSpace};
   }
   pre[class*="language-"] {  /* override for line-number.css
