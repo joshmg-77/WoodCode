@@ -111,7 +111,7 @@ const GlobalStyle = createGlobalStyle`
    ${({ lineNumbers }) =>lineNumbers && `textarea.prism-live{padding-left:3.8em !important;}
   `}
   span.line-numbers-rows {
-    display:${({ lineNumbers }) => (lineNumbers ? "block !important" : "none !important")};
+    display:${({ lineNumbers }) => (lineNumbers ? "block" : "none")};
   }
   pre[class*="language-"],code[class*="language-"],textarea.prism-live{
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace ,Menlo, "Courier New";
