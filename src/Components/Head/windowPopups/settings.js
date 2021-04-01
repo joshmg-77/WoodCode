@@ -146,12 +146,12 @@ export default function Settings({ openItem, onBackInner }) {
     setOptions({ ...options, [event.target.name]: value });
   };
 
-
+  console.log(...Object.keys(options).map(e=>e))
 
   useEffect(() => {
     /* with context we pass all data to the context and we're cosume in every*/
    setWaterMark({...WaterMark,Mark:options.watermark})
-  }, [...options]);
+  }, [...Object.keys(options).map(e=>e)]);
 
   useEffect(() => {
     setOptions({ ...options, color: randoms });
