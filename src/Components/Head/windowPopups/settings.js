@@ -102,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
   }
   ${({ lineNumbers }) =>!lineNumbers && `:not(pre) > code[class*="language-"], pre[class*="language-"] {
     padding-top:40px !important;
-    padding-bottom: 30px !important ;
+    padding-bottom: 30px !important;
     padding-left: .5rem !important;
 
   }
@@ -111,7 +111,7 @@ const GlobalStyle = createGlobalStyle`
    ${({ lineNumbers }) =>lineNumbers && `textarea.prism-live{padding-left:3.8em !important;}
   `}
   span.line-numbers-rows {
-    display:${({ lineNumbers }) => (lineNumbers ? "block" : "none")};
+    display:${({ lineNumbers }) => (lineNumbers ? "block !important" : "none !important")};
   }
   pre[class*="language-"],code[class*="language-"],textarea.prism-live{
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace ,Menlo, "Courier New";
@@ -164,8 +164,8 @@ export default function Settings({ openItem, onBackInner }) {
         backgroundColor={options.color}
         padding={`${options.padding}px`}
         WatermarkColor={options.color}
-        bottom={`${(parseInt(options.padding) + 5).toString()}px`}
-        right={`${parseInt(options.padding) + 5}px`}
+        bottom={`${(parseInt(options.padding) + 5).toString()}px !important`}
+        right={`${(parseInt(options.padding) + 5).toString()}px !important`}
         leftSpace={`${options.padding}px`}
         topSpace={`${options.padding}px`}
         boxShadow={options.box_shadow}
