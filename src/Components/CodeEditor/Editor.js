@@ -28,22 +28,19 @@ const Span = styled.span`
 `;
 
 const Editor = () => {
-  const [content, setContent] = useState(`.p{
-    color:red;
-  }
-  <head></head>
-  async function(){
-    let valor = "hello"
-  }
-  
-  class public VOi{
-    public static void main(){
-      System.out.println("hola");
-    }
-  }
-  #python
-  print("hi world")
-  `);
+  const [content, setContent] = useState(`/*
+  Code example 
+  source: https://github.com/joshmg-CA/Conversion-HextoRGB-RGBtoHex/blob/main/RgbtoHex.js 
+*/
+  const RgbtoHex = (rgb)=>{
+      let getNumbers = rgb.replace(/(\\brgb)?([()])/g,"");    
+      let numbers = getNumbers.split(",");    
+      let hexa0 = parseInt(numbers[0]).toString(16);
+      let hexa1 = parseInt(numbers[1]).toString(16);
+      let hexa2 = parseInt(numbers[2]).toString(16);
+
+      return \`#\${hexa0+hexa1+hexa2}\`
+  }`);
 
   const [langStore] = useSessionState("LANG", {
     defaultValue: { label: "javascript", value: "javascript",Mark:""},
