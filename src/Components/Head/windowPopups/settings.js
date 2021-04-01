@@ -151,7 +151,7 @@ export default function Settings({ openItem, onBackInner }) {
   useEffect(() => {
     /* with context we pass all data to the context and we're cosume in every*/
    setWaterMark({...WaterMark,Mark:options.watermark})
-  }, [options]);
+  }, [...options]);
 
   useEffect(() => {
     setOptions({ ...options, color: randoms });
