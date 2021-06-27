@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import logo from "../../assets/161677264542504006.png";
+import styled from 'styled-components';
+import logo from '../../assets/161677264542504006.png';
 
 const TitleWd = styled.h1`
   color: white;
-  font-family: "Indie Flower", cursive;
+  font-family: 'Indie Flower', cursive;
   font-weight: 800;
   margin-right: 8px;
   &::first-letter {
@@ -38,7 +38,7 @@ export default function LogoHeader() {
     <>
       <Logo>
         <TitleWd>WoodCode</TitleWd>
-        <LogoIMG src={logo} alt="woodcode" />
+        <LogoIMG src={logo} alt='woodcode' />
       </Logo>
     </>
   );

@@ -1,5 +1,5 @@
-import styled,{keyframes} from "styled-components";
-import Logo from "../../assets/161677264542504006.png";
+import styled, { keyframes } from 'styled-components';
+import Logo from '../../assets/161677264542504006.png';
 
 const Footer = styled.footer`
   width: 100%;
@@ -7,7 +7,11 @@ const Footer = styled.footer`
   height: auto;
   margin: auto;
   margin-top: 120px;
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.6) 90%
+  );
   backdrop-filter: blur(5px);
   color: white;
   display: flex;
@@ -15,7 +19,11 @@ const Footer = styled.footer`
   justify-content: center;
   align-content: space-around;
   padding: 20px;
-
+  box-shadow: 0px 0px 10px black;
+  border-radius: 8px;
+  &:hover {
+    box-shadow: 0px 0px 10px black inset;
+  }
 `;
 const SocialMedia = styled.div`
   width: 50%;
@@ -66,30 +74,30 @@ const key = keyframes`
   }
 `;
 const LogoWd = styled.div`
-  width:100%;
-  margin:auto;
-  display:flex;
-  justify-content:center;
-  perspective:600px;
-  & img{
-    width:70%;
-    min-width:35%;
-    height:auto;  
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  perspective: 600px;
+  & img {
+    width: 70%;
+    max-width: 170px;
+    height: auto;
     transform-style: preserve-3d;
-    animation:${key} 3s linear infinite alternate;  
+    animation: ${key} 3s linear infinite alternate;
   }
 `;
 const CopyRight = styled.div`
-   border: 2px solid white;
-    width: 100%;
-    padding: 10px;
-    margin-top: 50px;
-    text-align:center;
-    & span{
-      font-family: "Indie Flower", cursive;
-      font-weight: 800;
-      font-size:25px;
-    }
+  border: 2px solid white;
+  width: 100%;
+  padding: 10px;
+  margin-top: 50px;
+  text-align: center;
+  & span {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 800;
+    font-size: 25px;
+  }
 `;
 
 export default function FooterComponent() {
@@ -98,45 +106,70 @@ export default function FooterComponent() {
       <Footer>
         <SocialMedia>
           <a
-            href="https://www.linkedin.com/in/joshua-martínez-garcía-b652691a3"
-            alt="profile Linkedin" title="My profile Linkedin"
+            href='https://www.linkedin.com/in/joshua-martínez-garcía-b652691a3'
+            alt='profile Linkedin'
+            title='My profile Linkedin'
           >
-            <Icon className="fab fa-linkedin"></Icon>
+            <Icon className='fab fa-linkedin'></Icon>
           </a>
           <a
-            href="https://github.com/joshmg-CA"
-            alt="profile Github" title="My profile in Github"
+            href='https://github.com/joshmg-CA'
+            alt='profile Github'
+            title='My profile in Github'
           >
-            <Icon className="fab fa-github"></Icon>
+            <Icon className='fab fa-github'></Icon>
           </a>
           <a
-            href="https://www.instagram.com/josh_martinez77/"
-            alt="profile Instagram" title="My profile in Instagram"
-            
+            href='https://www.instagram.com/josh_martinez77/'
+            alt='profile Instagram'
+            title='My profile in Instagram'
           >
-            <Icon className="fab fa-instagram"></Icon>
+            <Icon className='fab fa-instagram'></Icon>
           </a>
         </SocialMedia>
 
         <MoreInformation>
           <UL>
             <li>
-              <a href="https://github.com/joshmg-CA/WoodCode/issues/new" title="Report issues">Report Issue</a>
+              <a
+                href='https://github.com/joshmg-CA/WoodCode/issues/new'
+                title='Report issues'
+              >
+                Report Issue
+              </a>
             </li>
             <li>
-              <a href="https://github.com/joshmg-CA/WoodCode" title="WoodCode" alt="repo WoodCode github">Resource</a>
+              <a
+                href='https://github.com/joshmg-CA/WoodCode'
+                title='WoodCode'
+                alt='repo WoodCode github'
+              >
+                Resource
+              </a>
             </li>
             <li>
-              <a href="https://t.me/josh_mg4?text=hola" title="send feedback" alt="feedback telegram">Send me your feedback</a>
+              <a
+                href='https://t.me/josh_mg4?text=hola'
+                title='send feedback'
+                alt='feedback telegram'
+              >
+                Send me your feedback
+              </a>
             </li>
             <li>
-              <a href="https://github.com/joshmg-CA/WoodCode/pulls" title="new feautre" alt="feautre in process">Upload your own theme</a>
+              <a
+                href='https://github.com/joshmg-CA/WoodCode/pulls'
+                title='new feautre'
+                alt='feautre in process'
+              >
+                Upload your own theme
+              </a>
             </li>
           </UL>
         </MoreInformation>
-       
+
         <LogoWd>
-           <img src={Logo} alt="Logo woodcode"/> 
+          <img src={Logo} alt='Logo woodcode' />
         </LogoWd>
         <CopyRight>
           <span>WoodCode 2021 </span>

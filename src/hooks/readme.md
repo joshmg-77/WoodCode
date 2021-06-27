@@ -7,10 +7,13 @@
     How works it?
 
     Step 1:
-    we're create the state for return hexa color and set it
+    we're create the state for return hex color and set it
 
     step 2:
     we're create array with letters and numbers for hex and the function Generator here we're picking out numbers randoms and after we're set the HexString       
 
     step 3: 
      we execute the function below into the hook useEffect without array dependencies, because it works in every re-render 
+
+
+

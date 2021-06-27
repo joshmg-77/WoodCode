@@ -18,7 +18,7 @@ const DivContent = styled.div.attrs((props) => ({
   left: 50%;
   top: 50px;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 20;
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid silver;
   backdrop-filter: blur(3px);
@@ -73,7 +73,7 @@ const BlackScreen = styled.div`
   margin: 0;
   padding: 0;
   height: 100vmax;
-  z-index: 1;
+  z-index: 2;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
 `;

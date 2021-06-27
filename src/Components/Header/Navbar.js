@@ -1,13 +1,10 @@
-import { useState } from "react";
-import styled from "styled-components";
-import ButtonA from "../Shared/Button";
-
-import {
-  ExportSnippet,
-  ChangeTheme,
-  ChangeLenguage,
-  Settings,
-} from "./windowPopups/index.js";
+import { useState } from 'react';
+import styled from 'styled-components';
+import ButtonA from '../common/Button';
+import Settings from '../PopsSettings/index';
+import ChangeLenguage from '../PopsChangeLenguage/index';
+import ChangeTheme from '../PopsChangeTheme/index';
+import ExportSnippet from '../PopsExport/index';
 
 const Nav = styled.nav`
   width: 90%;
@@ -28,11 +25,16 @@ const Nav = styled.nav`
     flex-flow: row wrap;
     justify-content: space-around;
     margin: 5px auto;
-    font-family: "Helvetica";
+    font-family: 'Helvetica';
   }
 `;
 const Icon = styled.i`
   margin-right: 5px;
+`;
+const Button = styled(ButtonA)`
+  font-style: italic;
+  letter-spacing: 2.5px;
+  font-weight: 600;
 `;
 
 const Navbar = () => {
@@ -49,7 +51,6 @@ const Navbar = () => {
   };
   const onBackInnerClosePopUp = () => {
     //it close popup
-    // eslint-disable-next-line no-unused-vars
     Object.keys(inter).forEach((r) => {
       setInter({ r: false });
     });
@@ -58,44 +59,41 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <ul className="ul">
-          <li className="settings">
-            <ButtonA onClick={(e) => GenericShowPopUp(e)}>
-              <Icon className="fas fa-cog"></Icon>Settings
-            </ButtonA>
+        <ul className='ul'>
+          <li className='settings'>
+            <Button onClick={(e) => GenericShowPopUp(e)}>
+              <Icon className='fas fa-cog'></Icon>Settings
+            </Button>
             <Settings
               openItem={inter.settings}
               onBackInner={() => onBackInnerClosePopUp()}
             />
           </li>
-          <li className="changeTheme">
-            <ButtonA onClick={(e) => GenericShowPopUp(e)}>
-              <Icon className="fas fa-palette"></Icon>Change theme
-            </ButtonA>
-
+          <li className='changeTheme'>
+            <Button onClick={(e) => GenericShowPopUp(e)}>
+              <Icon className='fas fa-palette'></Icon>Change theme
+            </Button>
             <ChangeTheme
-              className="changeTheme"
+              className='changeTheme'
               openItem={inter.changeTheme}
               onBackInner={() => onBackInnerClosePopUp()}
             />
           </li>
-          <li className="changeLenguage">
-            <ButtonA onClick={(e) => GenericShowPopUp(e)}>
-              <Icon className="fas fa-language"></Icon> Change
-              lenguage
-            </ButtonA>
+          <li className='changeLenguage'>
+            <Button onClick={(e) => GenericShowPopUp(e)}>
+              <Icon className='fas fa-language'></Icon> Change lenguage
+            </Button>
             <ChangeLenguage
               openItem={inter.changeLenguage}
               onBackInner={() => onBackInnerClosePopUp()}
             />
           </li>
-          <li className="export">
-            <ButtonA onClick={(e) => GenericShowPopUp(e)}>
-              <Icon className="fas fa-download"></Icon>Export
-            </ButtonA>
-
+          <li className='export'>
+            <Button onClick={(e) => GenericShowPopUp(e)}>
+              <Icon className='fas fa-download'></Icon>Export
+            </Button>
             <ExportSnippet
-              className="drop"
+              className='drop'
               openItem={inter.export}
               onBackInner={() => onBackInnerClosePopUp()}
             />
