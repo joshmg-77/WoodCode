@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
-import { useSessionState } from "@dannyman/use-store";
-import Select, { components } from "react-select";
-import styled from "styled-components";
-import DivContent from "../../Shared/DivContent";
-import { getAllGrammars } from "../../../utils/GetJsonLanguages.js";
+import { useState, useEffect } from 'react';
+import { useSessionState } from '@dannyman/use-store';
+import Select, { components } from 'react-select';
+import styled from 'styled-components';
+import DivContent from '../common/DivContent';
+import { getAllGrammars } from '../../utils/GetJsonLanguages.js';
 
 const DivAni = styled.div`
   width: 80%;
@@ -19,11 +19,11 @@ const SpanControl = styled.span`
   font-size: 25px;
   padding: 5px;
 `;
-const Control = ({children, ...props }) => {
+const Control = ({ children, ...props }) => {
   return (
     <components.Control {...props}>
       <SpanControl>
-        <i className="fas fa-language"></i>
+        <i className='fas fa-language'></i>
       </SpanControl>
       {children}
     </components.Control>
@@ -32,7 +32,7 @@ const Control = ({children, ...props }) => {
 
 function ChangeLenguage({ openItem, onBackInner, className, props }) {
   const [options, setOptions] = useState([]);
-  const [lang, setLang] = useSessionState("LANG", {
+  const [lang, setLang] = useSessionState('LANG', {
     defaultValue: {},
     isNew: true,
     autoRefresh: true,
@@ -49,37 +49,37 @@ function ChangeLenguage({ openItem, onBackInner, className, props }) {
   const AllStyleReactSelect = {
     option: (base) => ({
       ...base,
-      height: "100%",
-      ":hover": {
-        background: "#0f1123",
+      height: '100%',
+      ':hover': {
+        background: '#0f1123',
       },
-      ":focus": {
-        background: "#0f1123",
+      ':focus': {
+        background: '#0f1123',
       },
-      ":active": {
-        background: "#0f1123",
+      ':active': {
+        background: '#0f1123',
       },
-      background: "rgba(0,0,0,0.2)",
+      background: 'rgba(0,0,0,0.2)',
     }),
     menu: (vase) => ({
       ...vase,
-      background: "rgba(0,0,0,1)",
-      color: "#fff",
+      background: 'rgba(0,0,0,1)',
+      color: '#fff',
     }),
     control: (container) => ({
       ...container,
-      paddingLeft: ".3rem",
-      width: "100%",
-      background: "rgba(0,0,0,0.3)",
-      color: "#fff",
+      paddingLeft: '.3rem',
+      width: '100%',
+      background: 'rgba(0,0,0,0.3)',
+      color: '#fff',
     }),
     input: (input) => ({
       ...input,
-      color: "#fff",
+      color: '#fff',
     }),
     singleValue: (place) => ({
       ...place,
-      color: "#ffffff",
+      color: '#ffffff',
     }),
   };
 
@@ -93,10 +93,11 @@ function ChangeLenguage({ openItem, onBackInner, className, props }) {
 
       <DivAni>
         <img
-          src="https://media3.giphy.com/media/12BYUePgtn7sis/giphy.gif"
-          width="100%"
-          height="100%"
-          alt="gif programmer wooDCode"
+          src='https://media3.giphy.com/media/12BYUePgtn7sis/giphy.gif'
+          width='100%'
+          height='100%'
+          loading='lazy'
+          alt='gif programmer wooDCode'
         />
       </DivAni>
 
@@ -104,10 +105,8 @@ function ChangeLenguage({ openItem, onBackInner, className, props }) {
         <Select
           {...props}
           isSearchable
-          onChange={(w) =>
-            setLang({ label: w.label, value: w.value })
-          }
-          defaultValue="javascript"
+          onChange={(w) => setLang({ label: w.label, value: w.value })}
+          value={lang}
           components={{ Control }}
           options={options}
           styles={AllStyleReactSelect}
